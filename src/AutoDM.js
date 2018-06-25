@@ -41,9 +41,9 @@ const GenerateMessage = name => {
   ];
   const d = new Date();
   const dayName = days[d.getDay()];
-  // const xDimension = Math.floor(Math.random() * 500) + 300;
-  // const yDimension = Math.floor(Math.random() * 500) + 300;
-  // const billPhoto = `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`;
+  const xDimension = Math.floor(Math.random() * 500) + 300;
+  const yDimension = Math.floor(Math.random() * 500) + 300;
+  const billPhoto = `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`;
   // return `Hey ${name} Happy ${dayName} from my twitterbot.  `; // your message
   return `Hey ${name} Happy ${dayName} from my twitterbot. Here's a random photo of Bill Murray ${billPhoto} 😊😊 `; // your message
 
