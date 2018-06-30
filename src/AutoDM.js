@@ -24,7 +24,7 @@ const Bill = () => {
    encoding: 'binary'
  }
  request.get(parameters, (err, response, body) => {
-   // body = JSON.parse(body)
+   body = HTML.parse(body)
    saveFile(body, 'bill.jpg')
  })
 }
