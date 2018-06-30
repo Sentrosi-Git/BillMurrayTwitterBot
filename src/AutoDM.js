@@ -4,30 +4,30 @@ const request = require('request');
 const fs = require('fs');
 const my_user_name = require("../config").userName;
 const timeout = 1000 * 10; // timeout to send the message 5 min
-// const fileName = 'bill.jpg';
+
 const xDimension = Math.floor(Math.random() * 500) + 300;
 const yDimension = Math.floor(Math.random() * 500) + 300;
 const body = 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg';
-
+const fileName = 'bill.jpg';
 const AutoDM = () => {
   const stream = T.stream("user");
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
-const Bill = () => {
- const parameters = {
- //   url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
- //   url: 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg',
- //   qs: {
- //      api_key:
- //    },
-   encoding: 'binary'
- }
- request.get(parameters, (err, response, body) => {
-   body = HTML.parse(body)
-   saveFile(body, 'bill.jpg')
- })
-}
+// const Bill = () => {
+//  const parameters = {
+//    url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
+//    url: 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg',
+//    qs: {
+//       api_key:
+//     },
+//    encoding: 'binary'
+//  }
+//  request.get(parameters, (err, response, body) => {
+//    body = HTML.parse(body)
+//    saveFile(body, 'bill.jpg')
+//  })
+// }
 
 function saveFile(body, fileName) {
  const file = fs.createWriteStream(fileName)
@@ -98,6 +98,6 @@ const GenerateMessage = name => {
 
 };
 
-Bill();
+// Bill();
 
 module.exports = AutoDM;
