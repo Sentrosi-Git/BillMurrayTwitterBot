@@ -31,7 +31,7 @@ const AutoDM = () => {
 // }
 
 function saveFile(body, fileName) {
-  console.log(testing file save);
+  console.log('testing file save');
  const file = fs.createWriteStream(fileName)
  request(body).pipe(file).on('close', err => {
    if (err) {
