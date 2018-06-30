@@ -21,7 +21,7 @@ const Bill = () => {
  //   qs: {
  //      api_key:
  //    },
- //   encoding: 'binary'
+   encoding: 'binary'
  }
  request.get(parameters, (err, response, body) => {
    // body = JSON.parse(body)
