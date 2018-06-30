@@ -15,7 +15,7 @@ const AutoDM = () => {
 };
 const Bill = () => {
  const parameters = {
-   url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`
+   url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
    encoding: 'binary'
  }
  request.get(parameters, (err, respone, body) => {
