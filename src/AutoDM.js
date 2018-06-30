@@ -26,7 +26,7 @@ const Bill = () => {
  request.get() => {
    // body = JSON.parse(body)
    saveFile(body, 'bill.jpg')
- })
+ }
 }
 
 function saveFile(body, fileName) {
