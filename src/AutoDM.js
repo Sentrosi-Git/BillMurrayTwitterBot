@@ -1,16 +1,59 @@
 const T = require("./Twit.js");
-const Bill = require("./Bill.js");
+// const Bill = require("./Bill.js");
 const request = require('request');
 const fs = require('fs');
 const my_user_name = require("../config").userName;
 const timeout = 1000 * 10; // timeout to send the message 5 min
+
+const xDimension = Math.floor(Math.random() * 500) + 300;
+const yDimension = Math.floor(Math.random() * 500) + 300;
 
 const AutoDM = () => {
   const stream = T.stream("user");
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
+const Bill () => {
+ const parameters = {
+   url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`
+   encoding: 'binary'
+ }
+ request.get(parameters, (err, respone, body) => {
+   body = JSON.parse(body)
+   saveFile(body, 'bill.jpg')
+ })
+}
 
+function saveFile(body, fileName) {
+ const file = fs.createWriteStream(fileName)
+ request(body).pipe(file).on('close', err => {
+   if (err) {
+     console.log(err)
+   } else {
+     console.log('Media saved!')
+     const descriptionText = body.title
+     uploadMedia(descriptionText, fileName)
+   }
+ })
+}
+
+function uploadMedia(descriptionText, fileName) {
+ const filePath = path.join(__dirname, `../${fileName}`)
+ console.log(`file PATH ${filePath}`)
+ T.postMediaChunked({
+   file_path: filePath
+ }, (err, data, respone) => {
+   if (err) {
+     console.log(err)
+   } else {
+     console.log(data)
+     const params = {
+       status: descriptionText,
+       media_ids: data.media_id_string
+     }
+   }
+ })
+}
 const SendMessage = user => {
   const { screen_name, name } = user.source;
 
