@@ -95,9 +95,11 @@ const GenerateMessage = name => {
   const dayName = days[d.getDay()];
   // return `Hey ${name} Happy ${dayName} from my twitterbot.  `; // your message
   return `Hey ${name} Happy ${dayName} from my twitterbot. Here's a random photo of Bill Murray 😊😊 `; // your message
-
+  saveFile();
 };
 
 // Bill();
+
+
 
 module.exports = AutoDM;
