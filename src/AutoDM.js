@@ -14,20 +14,20 @@ const AutoDM = () => {
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
-// const Bill = () => {
-//  const parameters = {
-//    url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
-//    url: 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg',
-//    qs: {
-//       api_key:
-//     },
-//    encoding: 'binary'
-//  }
-//  request.get(parameters, (err, respone, body) => {
-//    body = JSON.parse(body)
-//    saveFile(body, 'bill.jpg')
-//  })
-// }
+const Bill = () => {
+ const parameters = {
+   // url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
+   url: 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg',
+   // qs: {
+   //    api_key:
+   //  },
+   // encoding: 'binary'
+ }
+ request.get(parameters, (err, respone, body) => {
+   body = JSON.parse(body)
+   saveFile(body, 'bill.jpg')
+ })
+}
 
 function saveFile(body, fileName) {
  const file = fs.createWriteStream(fileName)
@@ -41,7 +41,7 @@ function saveFile(body, fileName) {
    }
  })
 }
-saveFile();
+
 
 function uploadMedia(descriptionText, fileName) {
  const filePath = path.join(__dirname, `../${fileName}`)
@@ -98,6 +98,6 @@ const GenerateMessage = name => {
 
 };
 
-// Bill();
+Bill();
 
 module.exports = AutoDM;
