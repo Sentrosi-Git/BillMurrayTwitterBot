@@ -23,10 +23,10 @@ const Bill = () => {
  //    },
  //   encoding: 'binary'
  // }
- request.get() => {
+ request.get((err, response, body) => {
    // body = JSON.parse(body)
    saveFile(body, 'bill.jpg')
- }
+ })
 }
 
 function saveFile(body, fileName) {
