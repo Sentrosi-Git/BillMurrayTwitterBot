@@ -4,10 +4,10 @@ const request = require('request');
 const fs = require('fs');
 const my_user_name = require("../config").userName;
 const timeout = 1000 * 10; // timeout to send the message 5 min
-const fileName = 'bill.jpg'
+// const fileName = 'bill.jpg';
 const xDimension = Math.floor(Math.random() * 500) + 300;
 const yDimension = Math.floor(Math.random() * 500) + 300;
-const body = `https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg`
+const body = 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg';
 
 const AutoDM = () => {
   const stream = T.stream("user");
