@@ -11,7 +11,7 @@ const xDimension = Math.floor(Math.random() * 500) + 300;
 const yDimension = Math.floor(Math.random() * 500) + 300;
 // const billPhoto = `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`;
 
-function Bill() {
+ const Bill () => {
   const parameters = {
     url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`
     encoding: 'binary'
