@@ -13,7 +13,7 @@ const AutoDM = () => {
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
-const Bill () => {
+const Bill = () => {
  const parameters = {
    url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`
    encoding: 'binary'
