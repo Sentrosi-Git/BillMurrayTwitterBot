@@ -93,4 +93,3 @@ const GenerateMessage = name => {
 };
 
 module.exports = AutoDM;
-Bill();
