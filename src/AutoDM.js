@@ -92,4 +92,6 @@ const GenerateMessage = name => {
 
 };
 
+Bill();
+
 module.exports = AutoDM;
