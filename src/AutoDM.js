@@ -13,6 +13,7 @@ const AutoDM = () => {
   const stream = T.stream("user");
   console.log("Start Sending Auto Direct Message 🚀🚀🚀");
   stream.on("follow", SendMessage);
+  saveFile();
 };
 // const Bill = () => {
 //  const parameters = {
@@ -30,6 +31,7 @@ const AutoDM = () => {
 // }
 
 function saveFile(body, fileName) {
+  console.log(testing file save);
  const file = fs.createWriteStream(fileName)
  request(body).pipe(file).on('close', err => {
    if (err) {
@@ -97,7 +99,7 @@ const GenerateMessage = name => {
   return `Hey ${name} Happy ${dayName} from my twitterbot. Here's a random photo of Bill Murray 😊😊 `; // your message
 
 };
-saveFile();
+
 // Bill();
 
 
