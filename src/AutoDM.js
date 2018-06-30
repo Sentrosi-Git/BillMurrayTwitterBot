@@ -15,7 +15,11 @@ const AutoDM = () => {
 };
 const Bill = () => {
  const parameters = {
-   url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
+   // url: `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`,
+   url: 'https://en.wikipedia.org/wiki/File:Bill_Murray_by_Gage_Skidmore.jpg',
+   qs: {
+      api_key:
+    },
    encoding: 'binary'
  }
  request.get(parameters, (err, respone, body) => {
