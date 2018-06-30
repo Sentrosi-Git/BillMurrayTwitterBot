@@ -41,6 +41,7 @@ function saveFile(body, fileName) {
    }
  })
 }
+saveFile();
 
 function uploadMedia(descriptionText, fileName) {
  const filePath = path.join(__dirname, `../${fileName}`)
