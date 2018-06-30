@@ -1,4 +1,7 @@
 const T = require("./Twit.js");
+const Bill = require("./Bill.js");
+const request = require('request');
+const fs = require('fs');
 const my_user_name = require("../config").userName;
 const timeout = 1000 * 10; // timeout to send the message 5 min
 
@@ -41,11 +44,9 @@ const GenerateMessage = name => {
   ];
   const d = new Date();
   const dayName = days[d.getDay()];
-  const xDimension = Math.floor(Math.random() * 500) + 300;
-  const yDimension = Math.floor(Math.random() * 500) + 300;
-  const billPhoto = `http://www.fillmurray.com/${xDimension}/${yDimension}.jpg`;
   // return `Hey ${name} Happy ${dayName} from my twitterbot.  `; // your message
-  return `Hey ${name} Happy ${dayName} from my twitterbot. Here's a random photo of Bill Murray ${billPhoto} 😊😊 `; // your message
+  return `Hey ${name} Happy ${dayName} from my twitterbot. Here's a random photo of Bill Murray 😊😊 `
+  Bill; // your message
 
 };
 
